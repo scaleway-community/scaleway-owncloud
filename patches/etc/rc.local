@@ -12,5 +12,6 @@
 # By default this script does nothing.
 
 /usr/local/bin/install_mysql_server.sh
+/usr/local/bin/configure_ssl.sh
 
 exit 0
