@@ -5,7 +5,7 @@ VERSION_ALIASES =	8.0.4 8.0 8
 TITLE =			ownCloud
 DESCRIPTION =		ownCloud
 DOC_URL =		https://www.scaleway.com/docs/deploy-owncloud-with-object-storage
-SOURCE_URL =		https://github.com/scaleway/image-app-owncloud
+SOURCE_URL =		https://github.com/scaleway-community/scaleway-owncloud
 VENDOR_URL =		https://owncloud.org
 
 IMAGE_VOLUME_SIZE =	150G
