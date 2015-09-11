@@ -1,5 +1,4 @@
-DOCKER_NAMESPACE =	armbuild/
-NAME =			scw-app-owncloud
+NAME =			owncloud
 VERSION =		latest
 VERSION_ALIASES =	8.0.4 8.0 8
 TITLE =			ownCloud
