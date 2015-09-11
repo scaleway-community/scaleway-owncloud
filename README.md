@@ -1,6 +1,6 @@
 # Official ownCloud image on Scaleway
 
-[![Travis](https://img.shields.io/travis/scaleway/image-app-owncloud.svg)](https://travis-ci.org/scaleway/image-app-owncloud)
+[![Travis](https://img.shields.io/travis/scaleway-community/scaleway-owncloud.svg)](https://travis-ci.org/scaleway-community/scaleway-owncloud)
 [![Scaleway ImageHub](https://img.shields.io/badge/ImageHub-view-ff69b4.svg)](https://hub.scaleway.com/owncloud.html)
 [![Run on Scaleway](https://img.shields.io/badge/Scaleway-run-69b4ff.svg)](https://cloud.scaleway.com/#/servers/new?image=da6d590e-b86b-454d-934a-183eb7c0cd9a)
 
