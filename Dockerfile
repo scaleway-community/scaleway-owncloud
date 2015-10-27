@@ -16,6 +16,7 @@ RUN \
     apt-get install -y -q \
     php5-curl \
     pwgen \
+    ssl-cert \
     && apt-get install --no-install-recommends -y -q \
         owncloud \
     && apt-get clean
