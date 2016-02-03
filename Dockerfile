@@ -23,7 +23,8 @@ RUN \
 
 
 # Configure Apache
-RUN a2enmod rewrite && a2enmod ssl && a2ensite default-ssl.conf
+RUN a2enmod rewrite && a2enmod ssl && a2ensite default-ssl.conf \
+ && ln -s /var/www/owncloud /var/www/html/owncloud
 
 
 # Patch rootfs
