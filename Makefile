@@ -6,10 +6,13 @@ DESCRIPTION =		ownCloud
 DOC_URL =		https://www.scaleway.com/docs/deploy-owncloud-with-object-storage
 SOURCE_URL =		https://github.com/scaleway-community/scaleway-owncloud
 VENDOR_URL =		https://owncloud.org
+DEFAULT_IMAGE_ARCH =	x86_64
+
 
 IMAGE_VOLUME_SIZE =	150G
 IMAGE_BOOTSCRIPT =	stable
 IMAGE_NAME =		Owncloud 8
+
 
 ## Image tools  (https://github.com/scaleway/image-tools)
 all:	docker-rules.mk
