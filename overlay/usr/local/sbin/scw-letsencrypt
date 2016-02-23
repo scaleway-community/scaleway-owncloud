@@ -2,7 +2,7 @@
 
 DEBIAN_FRONTEND="noninteractive"
 
-URL=$(/usr/local/bin/oc-metadata --cached VOLUMES_0_SERVER_ID).pub.cloud.scaleway.com
+URL=$(/usr/local/bin/scw-metadata --cached VOLUMES_0_SERVER_ID).pub.cloud.scaleway.com
 
 pip install --upgrade pyopenssl ndg-httpsclient pyasn1
 git clone -b 'v0.4.0' https://github.com/letsencrypt/letsencrypt /opt/letsencrypt
