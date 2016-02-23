@@ -16,28 +16,32 @@ RUN /usr/local/sbin/builder-enter
 
 
 # Install packages
-RUN \
-    sh -c "echo 'deb http://download.opensuse.org/repositories/isv:/ownCloud:/community/xUbuntu_14.04/ /' >> /etc/apt/sources.list.d/owncloud.list" && \
-    curl -Ls http://download.opensuse.org/repositories/isv:ownCloud:community/xUbuntu_14.04/Release.key | apt-key add - && \
-    apt-get -q update && \
-    apt-get -y -q upgrade && \
-    apt-get install -y -q \
-    php5-curl \
-    pwgen \
-    ssl-cert \
-    && apt-get install --no-install-recommends -y -q \
-        owncloud \
-    && apt-get clean
-
+RUN sh -c "echo 'deb http://download.opensuse.org/repositories/isv:/ownCloud:/community/xUbuntu_14.04/ /' >> /etc/apt/sources.list.d/owncloud.list" \
+ && curl -Ls http://download.opensuse.org/repositories/isv:ownCloud:community/xUbuntu_14.04/Release.key | apt-key add - \
+ && apt-get -q update \
+ && apt-get -y -q upgrade \
+ && apt-get install -y -q \
+     libffi-dev \
+     libssl-dev \
+     git \
+     php5-curl \
+     pwgen \
+     python \
+     python-dev \
+     python-pip \
+ && apt-get install --no-install-recommends -y -q \
+     owncloud \
+ && apt-get clean
 
 # Configure Apache
-RUN a2enmod rewrite && a2enmod ssl && a2ensite default-ssl.conf \
+RUN a2enmod rewrite \
  && ln -s /var/www/owncloud /var/www/html/owncloud
-
 
 # Patch rootfs
 COPY ./overlay /
 
+# Add letsencrypt
+RUN update-rc.d letsencrypt defaults
 
 # Clean rootfs from image-builder
 RUN /usr/local/sbin/builder-leave
