@@ -16,8 +16,8 @@ RUN /usr/local/sbin/builder-enter
 
 
 # Install packages
-RUN sh -c "echo 'deb http://download.opensuse.org/repositories/isv:/ownCloud:/community/xUbuntu_14.04/ /' >> /etc/apt/sources.list.d/owncloud.list" \
- && curl -Ls http://download.opensuse.org/repositories/isv:ownCloud:community/xUbuntu_14.04/Release.key | apt-key add - \
+RUN sh -c "echo 'deb http://download.owncloud.org/download/repositories/stable/Ubuntu_16.04/ /' >> /etc/apt/sources.list.d/owncloud.list" \
+ && curl -Ls https://download.owncloud.org/download/repositories/stable/Ubuntu_16.04/Release.key | apt-key add - \
  && apt-get -q update \
  && apt-get -y -q upgrade \
  && apt-get install -y -q \
