@@ -1,0 +1,9 @@
+# Owncloud configuration
+
+In order to configure your owncloud, you'll need some infos about the database:
+Database user: owncloud
+Database name: owncloud_db
+Databse password: <database-passwd>
+
+Go to http://<your-ip>/owncloud, fill those infos and enter your desired user
+and password.

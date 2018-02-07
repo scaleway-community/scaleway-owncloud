@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Configure mysql
+chown -R mysql:mysql /var/lib/mysql/
+chown -R mysql:mysql /var/log/mysql/

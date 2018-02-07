@@ -5,16 +5,14 @@ cat <<EOF
 Owncloud $(cat /var/www/owncloud/version.php | grep VersionString | cut -d\' -f2) is installed in /var/www/owncloud.
 EOF
 
-if [ -f /root/.my.cnf ]; then
-    cat <<EOF
-
-MySQL is configured for user "root" with password "$(cat /root/.my.cnf | grep password | awk '{print $3}')"
-To continue the installation, open https://$(/usr/local/bin/scw-metadata --cached VOLUMES_0_SERVER_ID).pub.cloud.scaleway.com/owncloud/ in your browser
-EOF
+mysqladmin ping > /dev/null
+if [ $? -eq 0 ]
+then
+  cat /usr/share/doc/scaleway/owncloud/README 2>/dev/null
 else
     cat <<EOF
-
-MySQL is installing in background, come back in a few seconds.
+MySQL is installing in background.
+Check the README for updates.
 EOF
 fi
 
