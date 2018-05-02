@@ -1,0 +1,22 @@
+#!/bin/bash
+
+cat <<EOF
+
+Owncloud $(cat /var/www/owncloud/version.php | grep VersionString | cut -d\' -f2) is installed in /var/www/owncloud.
+EOF
+
+mysqladmin ping > /dev/null
+if [ $? -eq 0 ]
+then
+  cat /usr/share/doc/scaleway/owncloud/README 2>/dev/null
+else
+    cat <<EOF
+MySQL is installing in background.
+Check the README for updates.
+EOF
+fi
+
+cat <<EOF
+
+You can hide this message on the next connection by deleting the $0 file.
+EOF
